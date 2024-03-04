@@ -1,0 +1,24 @@
+package fundamentos;
+
+import java.util.Scanner;
+
+public class promrdio {
+
+	public static void main(String[] args) {
+		Scanner leer=new Scanner(System.in);
+		System.out.println("ingrese la cantidad de numeros que desea promediar");
+		int cantidaddenumeros=leer.nextInt();
+		int suma=0;
+		for (int i = 1;i<=cantidaddenumeros;i++) {
+			System.out.println("ingrese un numero"+i);
+			int numero =leer.nextInt();
+			suma +=numero;
+		}
+
+		double promedio=suma/cantidaddenumeros;
+		System.out.println("el promedio es"+ promedio);
+
+	}
+	
+
+}
