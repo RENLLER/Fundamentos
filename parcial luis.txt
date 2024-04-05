@@ -1,0 +1,40 @@
+package fundamentos;
+
+public class parcial1 {
+
+	public static void main(String[] args) {
+	}
+	
+	 
+	 int fuerzasFaccionA = 1500;
+     int fuerzasFaccionB = 1300;
+
+     
+     int[] bajasFaccionAInfanteria = {30, 60, 90};
+     int[] bajasFaccionACaballeria = {10, 60, 30};
+     int[] bajasFaccionACaballeriaPesada = {2, 3, 0};
+
+     int[] bajasFaccionBInfanteria = {50, 90, 10};
+     int[] bajasFaccionBCaballeria = {200, 180, 20};
+     int[] bajasFaccionBCaballeriaPesada = {10, 5, 75};
+
+     
+     int totalFuerzasCombate = fuerzasFaccionA + fuerzasFaccionB;
+
+     
+     int bajasInfanteriaTotal = calcularBajasTotales(bajasFaccionAInfanteria) + calcularBajasTotales(bajasFaccionBInfanteria);
+     int bajasCaballeriaTotal = calcularBajasTotales(bajasFaccionACaballeria) + calcularBajasTotales(bajasFaccionBCaballeria);
+     int bajasCaballeriaPesadaTotal = calcularBajasTotales(bajasFaccionACaballeriaPesada) + calcularBajasTotales(bajasFaccionBCaballeriaPesada);
+
+     {
+     System.out.println("El total de fuerzas en combate es: " + totalFuerzasCombate);
+     System.out.println("Bajas totales en filas de infantería: " + bajasInfanteriaTotal);
+     System.out.println("Bajas totales en filas de caballería: " + bajasCaballeriaTotal);
+     System.out.println("Bajas totales en filas de caballería pesada: " + bajasCaballeriaPesadaTotal);
+ }
+
+ 
+ public static int calcularBajasTotales(int[] bajas) {
+     return bajas[0] + bajas[1] + bajas[2];
+ }
+}
