@@ -1,0 +1,21 @@
+package trabajo_herencia;
+public class main {
+	 public static void main(String[] args) {
+       telefono telefono = new telefono("pp", 99, "Ap", 20, 256);
+       Tableta tableta = new Tableta("iP", 109, "Ap", 1, "iOS");
+       portatil portatil = new portatil("Macooko", 199, "App", "Intel", 16);
+       
+       System.out.println("Informacion del telefono ");
+       telefono.mostrar_informacion();
+       System.out.println();
+
+       
+
+
+        telefono.hacerLlamada("123-456-789");
+        tableta.instalarApp("free fire");
+        portatil.encender();
+    }
+}
+
+

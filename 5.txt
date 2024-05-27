@@ -1,0 +1,19 @@
+package trabajo_herencia;
+
+public class portatil extends electronico {
+	
+	    private String procesador;
+	    private int memoriaRAM;
+	    public portatil(String nombre, int precio, String marca, String procesador, int memoriaRAM) {
+	        super(nombre, precio, marca);
+	        this.procesador = procesador;
+	        this.memoriaRAM = memoriaRAM;
+	    }
+
+	
+	
+
+	public static void encender() {
+		   System.out.println("Encendiendo el portátil");
+	}
+}

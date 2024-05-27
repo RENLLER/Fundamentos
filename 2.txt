@@ -1,0 +1,18 @@
+package trabajo_herencia;
+
+public class telefono extends electronico {
+    private int modelo;
+    private int almacenamiento;
+
+    public telefono(String nombre, int precio, String marca, int modelo, int almacenamiento) {
+        super(nombre, precio, marca);
+        this.modelo = modelo;
+        this.almacenamiento = almacenamiento;
+    }
+
+    public static void hacerLlamada(String numero) {
+        System.out.println("Llamando al número " + numero);
+    }
+}
+
+

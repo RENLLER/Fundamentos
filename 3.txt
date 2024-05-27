@@ -1,0 +1,16 @@
+package trabajo_herencia;
+
+class Tableta extends electronico {
+    private int tamanoPantalla;
+    private String sistemaOperativo;
+
+    public Tableta(String nombre, int precio, String marca, int tamanoPantalla, String sistemaOperativo) {
+        super(nombre, precio, marca);
+        this.tamanoPantalla = tamanoPantalla;
+        this.sistemaOperativo = sistemaOperativo;
+    }
+
+    public void instalarApp(String nombreApp) {
+        System.out.println("Instalando la aplicación " + nombreApp);
+    }
+}
