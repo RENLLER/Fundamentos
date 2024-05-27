@@ -1,0 +1,69 @@
+package fundamentos;
+
+import java.util.Scanner;
+
+public class desarrollodematriz {
+
+
+    public static void main(String[] args) {
+        System.out.println("DESARROLLADO POR: Jimmy Andrés Cáceres Pineda");
+        System.out.println("                  Ángel Sebastián Amésquita Galindo");
+        System.out.println("                  Stiven Eduardo Oliveros Cifuentes");
+        System.out.println("                  Dilan Efrey Castellanos Reyes");
+        System.out.println();
+        System.out.println("                 😊");
+        System.out.println();
+
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese el número de filas de la matriz:");
+        int filas = leer.nextInt();
+        System.out.println("Ingrese el número de columnas de la matriz:");
+        int columnas = leer.nextInt();
+        double[][] matriz = new double[filas][columnas + 1]; 
+        System.out.println("MATRIZ DE   " + filas + " X " + columnas );
+        System.out.println();
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas + 1; j++) {
+                System.out.println("Digite el número para la posición [" + i + "-" + j + "] de la matriz:");
+                double coeficiente = leer.nextDouble();
+                matriz[i][j] = coeficiente;
+            }
+        }
+        for (int k = 0; k < filas; k++) {
+            for (int i = 0; i < filas; i++) {
+                if (i != k) {
+                    double factor = matriz[i][k] / matriz[k][k];
+                    for (int j = k; j < columnas + 1; j++) {
+                        matriz[i][j] -= factor * matriz[k][j];
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < filas; i++) {
+            double divisor = matriz[i][i];
+            for (int j = 0; j < columnas + 1; j++) {
+                matriz[i][j] /= divisor;
+            }
+        }
+        System.out.println("MATRIZ ESCALONADA SOLUCIONADA");
+        System.out.println();
+
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas + 1; j++) {
+                if (matriz[i][j] == 0) {
+                    matriz[i][j] = 0;
+                }
+                System.out.print(matriz[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        double[] respuesta = new double[filas];
+        for (int i = 0; i < filas; i++) {
+            respuesta[i] = matriz[i][columnas];
+        }
+        System.out.println("\n respuesta:");
+        for (int i = 0; i < filas; i++) {
+            System.out.println("x" + (i + 1) + " = " + respuesta[i]);
+        }
+    }
+}
